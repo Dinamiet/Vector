@@ -73,3 +73,9 @@ target_sources(
 	PRIVATE
 		src/vector.c
 )
+
+target_link_libraries(
+	${PROJECT_NAME}
+	PRIVATE
+		m
+)
