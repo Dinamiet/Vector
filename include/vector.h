@@ -90,18 +90,18 @@ Vector Vector_Cross(const Vector a, const Vector b);
 float Vector_Angle(const Vector a, const Vector b);
 
 /**
- * Create a vector from spherical coordinates
- * \param theta Angle from the positive X-axis
- * \param phi Angle from the positive Z-axis
+ * Create a unit vector from spherical coordinates
+ * \param theta Angle from the positive Z-axis (Polar angle)
+ * \param phi Angle from the positive X-axis (Azimuth angle)
  * \return Unit vector from spherical coordinates
  */
 Vector Vector_FromSpherical(const float theta, const float phi);
 
 /**
- * Vector to spherical coordinates
+ * Unit vector to spherical coordinates
  * \param a Vector to convert
- * \param theta Spherical angle from the positive X-axis
- * \param phi Spherical angle from the positive Z-axis
+ * \param theta Spherical angle from the positive Z-axis (Polar angle)
+ * \param phi Spherical angle from the positive X-axis (Azimuth angle)
  */
 void Vector_ToSpherical(const Vector a, float* theta, float* phi);
 

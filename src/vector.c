@@ -86,17 +86,17 @@ Vector Vector_FromSpherical(const float theta, const float phi)
 {
 	Vector v;
 
-	float plane = sinf(phi);
+	float plane = sinf(theta);
 
-	v.X = cosf(theta) * plane;
-	v.Y = sinf(theta) * plane;
-	v.Z = cosf(phi);
+	v.X = cosf(phi) * plane;
+	v.Y = sinf(phi) * plane;
+	v.Z = cosf(theta);
 
 	return v;
 }
 
 void Vector_ToSpherical(const Vector a, float* theta, float* phi)
 {
-	*theta = atan2f(a.Y, a.X);
-	*phi   = acosf(a.Z);
+	*phi   = atan2f(a.Y, a.X);
+	*theta = acosf(a.Z);
 }
