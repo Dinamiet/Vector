@@ -76,10 +76,11 @@ float Vector_Angle(const Vector a, const Vector b)
 	float dot = Vector_Dot(a, b);
 	float mag = Vector_Magnitude(a) * Vector_Magnitude(b);
 
-	if (fabsf(dot) > mag) // rounding errors
+	float frac = dot / mag;
+	if (fabsf(frac) >= 1)
 		return 0;
 
-	return acosf(dot / mag);
+	return acosf(frac);
 }
 
 Vector Vector_FromSpherical(const float theta, const float phi)
